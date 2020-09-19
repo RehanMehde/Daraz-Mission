@@ -22,20 +22,21 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Setup Node.js environment
-        uses: actions/setup-node@v1.4.3
+        uses: actions/setup-node@v2-beta
         with:
           version: 12
+
       - name: GitHub Action for Yarn
         uses: Borales/actions-yarn@v2.1.0
         with:
           # yarn/npm command
           cmd: install #nmp install/yarn install
-          
+    
+      - name: Creating Build
+        run: yarn build
+
       - name: Installing Surge
         run: npm install --global surge
-
-      - name: Creating Build
-        run: npm build
         
-      - name: Deploy on Surge
-        run: surge ./build http://efficient-development.surge.sh/ --token "2fbca017b4e46bb523d75ed4fd11d96a"
+      - name: delpoying on surge
+        run: surge ./build http://efficient-development.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
