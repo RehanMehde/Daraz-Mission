@@ -38,4 +38,4 @@ jobs:
         run: npm build
         
       - name: Deploy on Surge
-        run: surge ./build http://efficient-development.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+        run: surge ./build http://efficient-development.surge.sh/ --token "2fbca017b4e46bb523d75ed4fd11d96a"
