@@ -25,11 +25,11 @@ jobs:
         uses: actions/setup-node@v1.4.3
         with:
           version: 12
-      - name: action-yarn
-        uses: comchangs/action-yarn@v0.1-beta 
+      - name: GitHub Action for Yarn
+        uses: Borales/actions-yarn@v2.1.0
         with:
           # yarn/npm command
-          cmd: install npm  #install/yarn install
+          cmd: install #nmp install/yarn install
           
       - name: Installing Surge
         run: npm install --global surge
